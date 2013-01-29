@@ -22,7 +22,7 @@ void testApp::setup(){
 	//K-Initializing the gui object and specifying the gui x,y co-ordinates as well as width and height
 	gui = new ofxUICanvas(0,0,320,768);
 
-	gui->addWidgetDown(new ofxUILabel("The Kornea Control Panel v1.0", OFX_UI_FONT_LARGE));
+	gui->addWidgetDown(new ofxUILabel("K Alligator Eye Control Panel v1.0", OFX_UI_FONT_LARGE));
 	gui->addWidgetDown(new ofxUILabel("Image Processing Parameters",OFX_UI_FONT_MEDIUM));
 	gui->addWidgetDown(new ofxUISlider(304,16,0.0,255.0,100.0,"THRESHOLD VALUE"));
 	ofAddListener(gui->newGUIEvent, this, &testApp::guiEvent); 
