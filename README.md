@@ -3,7 +3,7 @@
 
 ##Proposed Functionalities##
 
-Image Tracking
-Primitive Image Processing
-Blob Detection
-Conversion of Blob into TUIO data
+####Image Tracking
+####Primitive Image Processing
+####Blob Detection
+####Conversion of Blob into TUIO data
