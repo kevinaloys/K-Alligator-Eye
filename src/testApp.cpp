@@ -103,15 +103,15 @@ void testApp::dragEvent(ofDragInfo dragInfo){
 void testApp::exit()
 {
 	gui->saveSettings("GUI/guiSettings.xml");     
-    delete gui;
+    	delete gui;
 }
 //--------------------------------------------------------------
 void testApp::guiEvent(ofxUIEventArgs &e)
 {
 	if(e.widget->getName() == "THRESHOLD VALUE")	
-    {
-        ofxUISlider *slider = (ofxUISlider *) e.widget;    
-        thresholdValue = slider->getScaledValue();
+    	{
+        	ofxUISlider *slider = (ofxUISlider *) e.widget;    
+        	thresholdValue = slider->getScaledValue();
 	}
 	
 }
