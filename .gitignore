@@ -1,0 +1,11 @@
+/ipch
+/obj
+*.sln
+*.suo
+*.sdf
+bin/*.dll
+bin/*.lib
+bin/*.exe
+bin/*.pdb
+*.swp
+
