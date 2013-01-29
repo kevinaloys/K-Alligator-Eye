@@ -7,5 +7,6 @@ bin/*.dll
 bin/*.lib
 bin/*.exe
 bin/*.pdb
+bin/*.exp
 *.swp
 
