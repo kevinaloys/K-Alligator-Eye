@@ -7,9 +7,16 @@ void testApp::setup(){
 	//K-Initializing the Camera Parameters
 	camWidth=320;
 	camHeight=240;
+	
+
 	ofBackground(36,12,59);
 	cam.initGrabber(camWidth,camHeight);
+
+	camera.allocate(camWidth,camHeight,OF_IMAGE_GRAYSCALE);
 	thresh.allocate(camWidth,camHeight, OF_IMAGE_GRAYSCALE);
+	highpass.allocate(camWidth,camHeight,OF_IMAGE_GRAYSCALE);
+	smooth.allocate(camWidth,camHeight,OF_IMAGE_GRAYSCALE);
+	amplify.allocate(camWidth,camHeight,OF_IMAGE_GRAYSCALE);
 
 
 	//Initialzing Font Parameters
@@ -20,9 +27,9 @@ void testApp::setup(){
 
 
 	//K-Initializing the gui object and specifying the gui x,y co-ordinates as well as width and height
-	gui = new ofxUICanvas(0,0,320,768);
+	gui = new ofxUICanvas(0,0,320,900);
 
-	gui->addWidgetDown(new ofxUILabel("K Alligator Eye Control Panel v1.0", OFX_UI_FONT_LARGE));
+	gui->addWidgetDown(new ofxUILabel("K Alligator Eye Control Panel", OFX_UI_FONT_LARGE));
 	gui->addWidgetDown(new ofxUILabel("Image Processing Parameters",OFX_UI_FONT_MEDIUM));
 	gui->addWidgetDown(new ofxUISlider(304,16,0.0,255.0,100.0,"THRESHOLD VALUE"));
 	ofAddListener(gui->newGUIEvent, this, &testApp::guiEvent); 
@@ -35,9 +42,10 @@ void testApp::update(){
 	if(cam.isFrameNew())
 	{
 		convertColor(cam, thresh, CV_RGB2GRAY);
-		cout<<thresholdValue<<endl;
+		convertColor(cam,camera,CV_RGB2GRAY);
 		threshold(thresh, thresholdValue);
 		thresh.update();
+		camera.update();
 	}
 
 }
@@ -45,9 +53,9 @@ void testApp::update(){
 //--------------------------------------------------------------
 void testApp::draw(){
 	//K-Drawing the Camera
-	cam.draw(360,60);
+	camera.draw(360,60);
 
-	thresh.draw(700,60);
+	thresh.draw(360,360);
 	ofSetColor(225);
 	myFont.drawString("Source Image", 360, 40);
 	myFont.drawString("Tracked Image",700,40);

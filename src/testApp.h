@@ -21,11 +21,20 @@ class testApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 
-		//K-Camer Initiation
+		//K-Camera Initiation
 		ofVideoGrabber cam;
-		ofImage thresh;
 		int camWidth;
 		int camHeight;
+		int smallWidth;
+		int smallHeight;
+		
+
+		//K-Image Variables
+		ofImage thresh;
+		ofImage highpass;
+		ofImage amplify;
+		ofImage smooth;
+		ofImage camera;
 
 		//K-Initializing the font variables
 		ofTrueTypeFont myFont;
