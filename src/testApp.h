@@ -41,6 +41,7 @@ class testApp : public ofBaseApp{
 
 		//K-Initializing the Graphic User Interface
 		ofxUICanvas *gui;
+		ofxUICanvas *thresh_panel;
 		void guiEvent(ofxUIEventArgs &e);
 
 		float thresholdValue;

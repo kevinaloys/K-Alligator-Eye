@@ -32,9 +32,13 @@ void testApp::setup(){
 
 	gui->addWidgetDown(new ofxUILabel("K Alligator Eye Control Panel", OFX_UI_FONT_LARGE));
 	gui->addWidgetDown(new ofxUILabel("Image Processing Parameters",OFX_UI_FONT_MEDIUM));
-	gui->addWidgetDown(new ofxUISlider(304,16,0.0,255.0,100.0,"THRESHOLD VALUE"));
 	ofAddListener(gui->newGUIEvent, this, &testApp::guiEvent); 
 	gui->loadSettings("GUI/guiSettings.xml");
+
+	thresh_panel=new ofxUICanvas(360,600,320,50);
+	thresh_panel->addWidgetDown(new ofxUISlider(304,16,0.0,255.0,100.0,"THRESHOLD VALUE"));
+	ofAddListener(thresh_panel->newGUIEvent, this, &testApp::guiEvent);
+	thresh_panel->loadSettings("GUI/guiSettings.xml");
 }
 
 //--------------------------------------------------------------
@@ -113,6 +117,8 @@ void testApp::exit()
 {
 	gui->saveSettings("GUI/guiSettings.xml");     
     	delete gui;
+	thresh_panel->saveSettings("GUI/guiSettings.xml");     
+    	delete thresh_panel;
 }
 //--------------------------------------------------------------
 void testApp::guiEvent(ofxUIEventArgs &e)
