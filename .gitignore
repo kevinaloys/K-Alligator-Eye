@@ -3,6 +3,7 @@
 *.sln
 *.suo
 *.sdf
+*.opensdf
 bin/*.dll
 bin/*.lib
 bin/*.exe
