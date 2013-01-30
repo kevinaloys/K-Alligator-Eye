@@ -9,4 +9,6 @@
 ####Conversion of Blob into TUIO data
 ####Provide Blob id
 
-All Rights Reserved K-Technologies Inc. 2013
+
+
+#####All Rights Reserved K-Technologies Inc. 2013
