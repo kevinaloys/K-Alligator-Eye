@@ -40,9 +40,7 @@ class testApp : public ofBaseApp{
 		ofTrueTypeFont myFont;
 
 		//K-Initializing the Graphic User Interface
-		ofxUICanvas *left_panel;
-		ofxUICanvas *thresh_panel;
-
+		ofxUICanvas *gui;
 		void guiEvent(ofxUIEventArgs &e);
 
 		float thresholdValue;
