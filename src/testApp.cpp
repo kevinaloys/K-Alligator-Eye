@@ -27,13 +27,19 @@ void testApp::setup(){
 
 
 	//K-Initializing the gui object and specifying the gui x,y co-ordinates as well as width and height
-	gui = new ofxUICanvas(0,0,320,900);
+	left_panel = new ofxUICanvas(0,0,320,900);
+	left_panel->addWidgetDown(new ofxUILabel("K Alligator Eye Control Panel", OFX_UI_FONT_LARGE));
+	ofAddListener(left_panel->newGUIEvent, this, &testApp::guiEvent); 
+	left_panel->loadSettings("GUI/guiSettings.xml");
 
-	gui->addWidgetDown(new ofxUILabel("K Alligator Eye Control Panel", OFX_UI_FONT_LARGE));
-	gui->addWidgetDown(new ofxUILabel("Image Processing Parameters",OFX_UI_FONT_MEDIUM));
-	gui->addWidgetDown(new ofxUISlider(304,16,0.0,255.0,100.0,"THRESHOLD VALUE"));
-	ofAddListener(gui->newGUIEvent, this, &testApp::guiEvent); 
-	gui->loadSettings("GUI/guiSettings.xml");
+
+
+	//Initialized a gui for the threshold video parameter
+	thresh_panel=new ofxUICanvas(600,600,50,50);
+	thresh_panel->addWidgetDown(new ofxUILabel("THRESHOLD PARAMETERS",OFX_UI_FONT_SMALL));
+	thresh_panel->addWidgetDown(new ofxUISlider(304,16,0.0,255.0,100.0,"THRESHOLD VALUE"));
+	ofAddListener(left_panel->newGUIEvent, this, &testApp::guiEvent);
+
 }
 
 //--------------------------------------------------------------
@@ -55,7 +61,7 @@ void testApp::draw(){
 	//K-Drawing the Camera
 	camera.draw(360,60);
 
-	thresh.draw(360,360);
+	thresh.draw(360,400);
 	ofSetColor(225);
 	myFont.drawString("Source Image", 360, 40);
 	myFont.drawString("Tracked Image",700,40);
@@ -110,8 +116,8 @@ void testApp::dragEvent(ofDragInfo dragInfo){
 //-------------------------------------------------------------
 void testApp::exit()
 {
-	gui->saveSettings("GUI/guiSettings.xml");     
-    	delete gui;
+	left_panel->saveSettings("GUI/guiSettings.xml");     
+    	delete left_panel;
 }
 //--------------------------------------------------------------
 void testApp::guiEvent(ofxUIEventArgs &e)
