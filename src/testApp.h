@@ -29,7 +29,7 @@ class testApp : public ofBaseApp{
 		int smallHeight;
 		
 
-		//K-Image Variables
+		//K-Image Variables declared
 		ofImage thresh;
 		ofImage highpass;
 		ofImage amplify;

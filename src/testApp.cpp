@@ -11,7 +11,8 @@ void testApp::setup(){
 
 	ofBackground(36,12,59);
 	cam.initGrabber(camWidth,camHeight);
-
+	
+	//K-Initializing the Frame Parameters
 	camera.allocate(camWidth,camHeight,OF_IMAGE_GRAYSCALE);
 	thresh.allocate(camWidth,camHeight, OF_IMAGE_GRAYSCALE);
 	highpass.allocate(camWidth,camHeight,OF_IMAGE_GRAYSCALE);
@@ -19,7 +20,7 @@ void testApp::setup(){
 	amplify.allocate(camWidth,camHeight,OF_IMAGE_GRAYSCALE);
 
 
-	//Initialzing Font Parameters
+	//K-Initialzing Font Parameters
 	ofTrueTypeFont::setGlobalDpi(72);
 	myFont.loadFont("newmedia.ttf", 20, true, true);
 	myFont.setLineHeight(20.0f);
