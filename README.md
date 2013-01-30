@@ -7,3 +7,8 @@
 ####Primitive Image Processing
 ####Blob Detection
 ####Conversion of Blob into TUIO data
+####Provide Blob id
+
+
+
+#####All Rights Reserved K-Technologies Inc. 2013
