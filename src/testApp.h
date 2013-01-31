@@ -31,9 +31,6 @@ class testApp : public ofBaseApp{
 
 		//K-Image Variables declared
 		ofImage thresh;
-		ofImage highpass;
-		ofImage amplify;
-		ofImage smooth;
 		ofImage camera;
 
 		//K-Initializing the font variables
