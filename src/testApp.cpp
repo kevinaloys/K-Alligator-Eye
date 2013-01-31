@@ -15,9 +15,6 @@ void testApp::setup(){
 	//K-Initializing the Frame Parameters
 	camera.allocate(camWidth,camHeight,OF_IMAGE_GRAYSCALE);
 	thresh.allocate(camWidth,camHeight, OF_IMAGE_GRAYSCALE);
-	highpass.allocate(camWidth,camHeight,OF_IMAGE_GRAYSCALE);
-	smooth.allocate(camWidth,camHeight,OF_IMAGE_GRAYSCALE);
-	amplify.allocate(camWidth,camHeight,OF_IMAGE_GRAYSCALE);
 
 
 	//K-Initialzing Font Parameters
