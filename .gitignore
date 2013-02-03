@@ -10,4 +10,9 @@ bin/*.exe
 bin/*.pdb
 bin/*.exp
 *.swp
+*.vcxproj
+*.filters
+*.user
+*.make
+*.gitkeep
 
